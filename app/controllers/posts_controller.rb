@@ -14,12 +14,13 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    #@user = current_user
     @post = Post.new
-    @categories = Category.all.map{|c| [ c.id, c.name ] }
+    @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
   # GET /posts/1/edit
   def edit
-    @categories = Category.all.map{|c| [ c.id, c.name ] }
+    @categories = Category.all.map{|c| [ c.name, c.id] }
   end
 
   # POST /posts
