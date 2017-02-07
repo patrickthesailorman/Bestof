@@ -14,7 +14,7 @@
   <div class="field">
     <%= f.label :category %>
     <!-- <%= f.text_field :category %> -->
-    <%= select(:post, :user_id, @categories) %>
+    <%= f.select(:category_id,  @categories) %>
   </div>
 
   <div class="field">
@@ -53,8 +53,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+    <%#= f.label :user_id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
 
   <div class="actions">
