@@ -15,16 +15,18 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @categories = Category.all.map{|c| [ c.id, c.name ] }
   end
-
   # GET /posts/1/edit
   def edit
+    @categories = Category.all.map{|c| [ c.id, c.name ] }
   end
 
   # POST /posts
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @post.category_id = params[:category_id]
 
     respond_to do |format|
       if @post.save
@@ -40,6 +42,8 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    @product.category_id = params[:category_id]
+
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
