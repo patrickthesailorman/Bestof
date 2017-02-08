@@ -1,5 +1,14 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :post_owner]
+  #before_action :authenticate_user!,except:[:index]
+      before_action :post_owner, only: [:edit, :update, :destroy]
+
+  def post_owner
+      unless @post.user_id == current_user.id
+       flash[:notice] = 'Access denied as you are not owner of this Post!!!'
+       redirect_to posts_path
+      end
+  end
 
   # GET /posts
   # GET /posts.json
@@ -10,11 +19,13 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+
   end
 
   # GET /posts/new
   def new
     #@user = current_user
+    @post = current_user.posts.build
     @post = Post.new
     @categories = Category.all.map{|c| [ c.name, c.id ] }
   end
@@ -26,6 +37,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    @post = current_user.posts.build(post_params)
     @post = Post.new(post_params)
     @post.category_id = params[:category_id]
 
@@ -41,7 +53,7 @@ class PostsController < ApplicationController
   end
 
   def vote
-    @post = Post.find(params[:id])
+    @post = Post.find(params[:post][:id])
     @post.upvote_by current_user
     #vote = @post.votes + 1
     #@post.update_attribute(:votes=> vote)
@@ -82,6 +94,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:category, :title, :content, :pics, :link, :address, :lat, :long, :user_id)
+      params.require(:post).permit(:category, :title, :votes, :content, :pics, :link, :address, :lat, :long, :user_id)
     end
 end

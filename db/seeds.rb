@@ -5,5 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(firstname: 'Robert', lastname: 'Hunter', username: 'RamblinRose', password: '123123123', email: 'rhunter@gmail.com')
-Category.create()
+#User.create(firstname: 'Patrick', lastname: 'McCarty', username: 'Patrickthesailorman', password: '123123123', email: 'patrickthesailorman@gmail.com' role: 'admin')
+#categories = Category.create([{name: 'Bars'}, {name: 'Beaches'}, {name: 'Cafes'}, {name: 'Restaurants'}, {name: 'Nightlife'}, {name: 'Pizza'}, {name: 'Sushi'}, {name: 'Seafood'}])
+#categories = Category.create([{name: 'Scenic'}, {name: 'Marinas'}, {name: 'Parks'}, {name: 'Music'}, {name: 'Events'}, {name: 'Things to do'}])

@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
 <p>
   <strong>Category:</strong>
@@ -22,6 +22,7 @@
 
 <% unless current_user == @post.user_id  %>
 <%= form_for @post, :url => {:action => 'vote'}, :method => :put,  :remote => true do |f| %>
+  <%= f.hidden_field :id, value: @post.id %>
   <%= f.hidden_field :votes, value: @post.votes %>
   <%= f.submit 'Vote' %>
 
