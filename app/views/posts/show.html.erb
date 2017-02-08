@@ -20,7 +20,7 @@
   <%= @post.votes %>
 </p>
 
-<% unless current_user.id == @post.user_id  %>
+<% unless current_user == @post.user_id  %>
 <%= form_for @post, :url => {:action => 'vote'}, :method => :put,  :remote => true do |f| %>
   <%= f.hidden_field :votes, value: @post.votes %>
   <%= f.submit 'Vote' %>
