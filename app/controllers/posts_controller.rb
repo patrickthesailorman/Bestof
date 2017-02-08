@@ -40,6 +40,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def vote
+    @post = Post.find(params[:id])
+    @post.upvote_by current_user
+    #vote = @post.votes + 1
+    #@post.update_attribute(:votes=> vote)
+    logger.info "voted"
+    redirect_to(posts_path)
+  end
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update

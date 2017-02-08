@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   rolify :before_add => :before_add_method
-  resourcify
+
   def before_add_method(role)
     #do something before it gets added
   end
@@ -16,4 +16,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
    has_many :posts
+   validates :username, presence: true
+   validates :password, presence: true,
+              length: { minimum: 6 }
+   validates :email, presence: true
+   acts_as_voter
 end
