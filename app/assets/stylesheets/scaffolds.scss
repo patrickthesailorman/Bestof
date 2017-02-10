@@ -44,8 +44,16 @@ td {
 }
 
 div {
-  &.field, &.actions {
+   margin-left: 2%;
+  &.field {
     margin-bottom: 10px;
+    color: #18f32d;
+  }
+  &.actions {
+
+  }
+  &.field input {
+   color: black;
   }
 }
 
@@ -75,7 +83,7 @@ div {
     margin: -7px;
     margin-bottom: 0;
     background-color: #c00;
-    color: #fff;
+    color: #3ff7c7;
   }
 
   ul li {

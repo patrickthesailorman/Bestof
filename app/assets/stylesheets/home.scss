@@ -19,7 +19,7 @@ body {
   bottom:0; */
   background-color: rgba(255, 255, 255, 0.1);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: auto;
   background-: transparent;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -30,9 +30,11 @@ body {
 }
 h1 {
   color: #8aea5e;
+  margin: 3%;
 }
 h4 {
   color: #f39bf3;
+  margin: 3%;
 }
 .pageOne {
 
