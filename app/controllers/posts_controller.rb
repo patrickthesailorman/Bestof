@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :post_owner]
   #before_action :authenticate_user!,except:[:index]
       before_action :post_owner, only: [:edit, :update, :destroy]
+      load_and_authorize_resource
 
   def post_owner
       unless @post.user_id == current_user.id
@@ -19,7 +20,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-
+    # @post is already loaded and authorized
   end
 
   # GET /posts/new
@@ -63,7 +64,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    @product.category_id = params[:category_id]
+    @post.category = params[:category]
 
     respond_to do |format|
       if @post.update(post_params)

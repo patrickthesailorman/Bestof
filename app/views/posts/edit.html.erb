@@ -1,5 +1,7 @@
 <h1>Editing Post</h1>
-
+  <% if can? :update, @post %>
+    <%= link_to "Edit", edit_post_path(@post) %>
+  <% end %>
 <%= render 'form', post: @post %>
 
 <%= link_to 'Show', @post %> |
