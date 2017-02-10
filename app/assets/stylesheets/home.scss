@@ -3,28 +3,39 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 html {
-  background-image: url("/assets/providence-rhode-island-600.jpg");
+  /* background-image: url("/assets/providence-rhode-island-600.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-color: black;
+  height: 100%;
 }
 
 body {
-  /* background-image: url("images/RI images/providence-rhode-island-600.jpg"); */
-  /* background-color: #333; */
+  background-image: url("/assets/providence-rhode-island-600");
+
+  /* position: absolute; */
+  /* top:0;
+  left:0;
+  bottom:0; */
+  background-color: rgba(255, 255, 255, 0.1);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-: transparent;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
   margin: 33px;
+  height:100%;
+/*   width: 100%; */
 }
 h1 {
-  color: green;
+  color: #8aea5e;
 }
 h4 {
-  color: purple;
+  color: #f39bf3;
 }
 .pageOne {
-  background-color: red;
+
   /* background-image: url("providence-rhode-island-600.jpg");
   background-size: cover; */
 }

@@ -38,8 +38,8 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = current_user.posts.build(post_params)
-    @post = Post.new(post_params)
-    @post.category_id = params[:category_id]
+    #@post = Post.new(post_params)
+    #@post.category_ids = [post_params[:category_id]]
 
     respond_to do |format|
       if @post.save
@@ -94,6 +94,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:category, :title, :votes, :content, :pics, :link, :address, :lat, :long, :user_id)
+      params.require(:post).permit(:title, :votes, :content, :pics, :link, :address, :lat, :long, :user_id, :category_ids => [])
     end
 end
