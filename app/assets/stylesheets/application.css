@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+.navbar-text {
+  color: blue;
+}
+a.navbar-link {
+  color: red;
+}

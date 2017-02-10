@@ -1,3 +1,28 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+  background-image: url("./images/12m.jpeg");
+  background-color: yellow;
+}
+
+body {
+  /* background-image: url("images/RI images/providence-rhode-island-600.jpg"); */
+  /* background-color: #333; */
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+h1 {
+  color: green;
+}
+h4 {
+  color: purple;
+}
+.pageOne {
+  background-color: red;
+  /* background-image: url("providence-rhode-island-600.jpg");
+  background-size: cover; */
+}

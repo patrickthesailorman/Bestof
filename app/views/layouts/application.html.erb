@@ -3,13 +3,16 @@
   <head>
     <title>Bestof</title>
     <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Della+Respira" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <p class="navbar-text pull-right">
+    <nav class="navbar-text pull-right">
     <% if user_signed_in? %>
        Logged in as <strong><%= current_user.username %></strong>.
        <%= link_to 'Home', home_index_path, :class => 'navbar-link' %> |
@@ -22,9 +25,12 @@
         <%= link_to "Log In", user_session_path, :class => 'navbar-link' %> |
         <%= link_to 'View Posts', posts_path, :class => 'navbar-link' %>
         <% end %>
-        </p>
+    </nav>
+  <div class="pageOne">
     <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
+
+  </div>
     <%= yield %>
   </body>
 </html>
