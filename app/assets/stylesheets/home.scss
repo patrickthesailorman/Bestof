@@ -3,8 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 html {
-  background-image: url("./images/12m.jpeg");
-  background-color: yellow;
+  background-image: url("/assets/providence-rhode-island-600.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
 }
 
 body {
