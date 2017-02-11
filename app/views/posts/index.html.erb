@@ -3,47 +3,47 @@
 <div class="postsPage">
 
   <h2> All Posts </h2>
-
-<br />
-  <table>
-    <thead>
-      <tr>
-        <th>Category</th>
-        <th>Title</th>
-        <th>Votes</th>
-        <th>Content</th>
-        <th>Pics</th>
-        <th>Link</th>
-        <th>Address</th>
-        <th>Lat</th>
-        <th>Long</th>
-        <th>User</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @posts.each do |post| %>
+<div class="container-fluid">
+  <br />
+    <table>
+      <thead>
         <tr>
-          <td><%= post.categories.map { |cat| cat.name }.join(",") %></td>
-          <!-- <td><%#= link_to Category.find(post.category_id).name, category_path(post.category_id) %></td> -->
-          <td><%= post.title %></td>
-          <td><%= post.votes %></td>
-          <td><%= post.content %></td>
-          <td><%= post.pics %></td>
-          <td><%= post.link %></td>
-          <td><%= post.address %></td>
-          <td><%= post.lat %></td>
-          <td><%= post.long %></td>
-          <td><%= post.user.username%></td>
-          <td><%= link_to 'Show', post %></td>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th>Category</th>
+          <th>Title</th>
+          <th>Votes</th>
+          <th>Content</th>
+          <th>Pics</th>
+          <th>Link</th>
+          <th>Address</th>
+          <th>Lat</th>
+          <th>Long</th>
+          <th>User</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td><%= post.categories.map { |cat| cat.name }.join(",") %></td>
+            <!-- <td><%#= link_to Category.find(post.category_id).name, category_path(post.category_id) %></td> -->
+            <td><%= post.title %></td>
+            <td><%= post.votes %></td>
+            <td><%= post.content %></td>
+            <td><%= post.pics %></td>
+            <td><%= post.link %></td>
+            <td><%= post.address %></td>
+            <td><%= post.lat %></td>
+            <td><%= post.long %></td>
+            <td><%= post.user.username%></td>
+            <td><%= link_to 'Show', post %></td>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
   <br>
 
   <%= link_to 'New Post', new_post_path %>
