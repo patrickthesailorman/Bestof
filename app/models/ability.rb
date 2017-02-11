@@ -1,23 +1,23 @@
-class Ability
-  include CanCan::Ability
-
-  def initialize(user)
-    # Define abilities for the passed in user here. For example:
-
-    can :read, :all                   # allow everyone to read everything
-    if user && user.admin?
-      can :access, :rails_admin       # only allow admin users to access Rails Admin
-      can :dashboard                  # allow access to dashboard
-      if user.role? :superadmin
-        can :manage, :all             # allow superadmins to do anything
-      elsif user.role? :newuser
-        can :manage, [User, Post]  # allow managers to do anything to products and users
-      elsif user.role? :current_user
-        can :update, Post, :hidden => false  # allow sales to only update visible products
-      end
-    end
-  end
-end
+#class Ability
+#  include CanCan::Ability
+#
+#  def initialize(user)
+#    # Define abilities for the passed in user here. For example:
+#
+#    can :read, :all                   # allow everyone to read everything
+#    if user && user.admin?
+#      can :access, :rails_admin       # only allow admin users to access Rails Admin
+#      can :dashboard                  # allow access to dashboard
+#      if user.role? :superadmin
+#        can :manage, :all             # allow superadmins to do anything
+#      elsif user.role? :newuser
+#        can :manage, [User, Post]  # allow managers to do anything to products and users
+#      elsif user.role? :current_user
+#        can :update, Post, :hidden => false  # allow sales to only update visible products
+#      end
+#    end
+#  end
+#end
     #   user ||= User.new # guest user (not logged in)
     #   if user.admin?
     #     can :manage, :all

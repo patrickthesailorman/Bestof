@@ -1,6 +1,6 @@
 body {
   /* background-image: url(/assets/images/RI_images/providence-rhode-island-600.jpg) */
-  color: purple;
+  color: #0cf5e3;
   font-family: 'Della Respira', serif;
   font-size: 13px;
   line-height: 18px;
@@ -21,10 +21,10 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #f70404;
 
   &:visited {
-    color: #666;
+    color: #f70808;
   }
 
   &:hover {
@@ -32,7 +32,9 @@ a {
     background-color: #000;
   }
 }
-
+.actions {
+  color: blue;
+}
 th {
   padding-bottom: 5px;
 }
@@ -83,7 +85,7 @@ div {
     margin: -7px;
     margin-bottom: 0;
     background-color: #c00;
-    color: #3ff7c7;
+    color: yellow;
   }
 
   ul li {
