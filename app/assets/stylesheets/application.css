@@ -17,5 +17,8 @@
   color: blue;
 }
 a.navbar-link {
-  color: red;
+  color: #00ff76;
+}
+input {
+  color: black;
 }
