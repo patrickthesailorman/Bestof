@@ -14,7 +14,7 @@
  *= require_self
  */
 .navbar-text {
-  color: blue;
+  color: #f5adf5;
 }
 a.navbar-link {
   color: #00ff76;
