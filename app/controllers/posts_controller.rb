@@ -63,7 +63,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    @product.category_id = params[:category_id]
+    @product.category_ids = params[:category_ids]
 
     respond_to do |format|
       if @post.update(post_params)
