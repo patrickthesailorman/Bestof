@@ -23,6 +23,12 @@
         <%= link_to 'View Posts', posts_path, :class => 'navbar-link' %>
         <% end %>
         </p>
+    <% if current_user %>
+       <%= <link_to "logout", destroy_user_session_path, method: :delete %>
+    <% else %>
+        <%= link_to "Login", new_user_session-path %>
+    <% end %>
+
     <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
     <%= yield %>
