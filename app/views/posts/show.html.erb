@@ -3,6 +3,7 @@
 <p>
   <strong>Category:</strong>
   <%= @post.category %>
+  <%= @post.categories.map { |cat| cat.name }.join(",") %>
 </p>
 
 <p>
@@ -56,7 +57,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @post.user %>
+  <%= @post.user.username %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
