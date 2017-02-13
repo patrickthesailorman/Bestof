@@ -23,17 +23,22 @@ body {
   height:100%;
 /*   width: 100%; */
 }
-h1 {
+h2.title {
   color: #8aea5e;
   margin: 3%;
 }
 h4 {
   color: #f39bf3;
-  margin: 3%;
+  margin: 5%;
 }
 .pageOne {
 
   /* background-image: url("providence-rhode-island-600.jpg");
   background-size: cover; */
 }
-h2.title {color: green;}
+body.new {
+  background-image: url("/assets/waterfire-rhode-island-ri0716.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}

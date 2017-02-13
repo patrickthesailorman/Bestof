@@ -38,16 +38,17 @@ body.table tr td {
   width:100%;
   background-color: rgba(223, 240, 216, 0.5);
 }
-body.postsPage2 {
-  background-image: url("/assets/12m.jpeg");
+body.posts.show {
+  background-image: url("/assets/bannisters.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 68% 100%;
+  height: 1000px;
 }
 .showContainer {
   color: blue;
   text-align: center;
   margin-top: 5%;
-  margin-left: 20%;
+  margin-left: 70%;
   margin-right: 20%;
   padding: 5px;
   width:25%;
