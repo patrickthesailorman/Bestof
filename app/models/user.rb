@@ -18,9 +18,9 @@ class User < ApplicationRecord
    def user_params
      params.require(:user).permit(:username, :firstname, :lastname, :email, :password, :password_confirmation, :role)
    end
-   def admin?
-    has_role?(:admin)
-   end
+   #def admin?
+    #has_role?(:admin)
+   #end
    def superadmin?
     has_role?(:superadmin)
    end

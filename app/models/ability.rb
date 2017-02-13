@@ -2,6 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    user.has_role?(:admin)
     # Define abilities for the passed in user here. For example:
 
     can :read, :all                   # allow everyone to read everything
