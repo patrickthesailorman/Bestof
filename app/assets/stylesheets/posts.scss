@@ -24,7 +24,7 @@ tr td{
 th {
   color: #8a30b5;
 }
-body.table td {
+body.table tr td {
   max-height: 100px;
   max-width: 150px;
   overflow: auto;
@@ -39,7 +39,7 @@ body.table td {
   background-color: rgba(223, 240, 216, 0.5);
 }
 body.postsPage2 {
-  background-image: url("/assets/images/12m.jpeg");
+  background-image: url("/assets/12m.jpeg");
   background-repeat: no-repeat;
   background-size: 100%;
 }
