@@ -1,64 +1,65 @@
 <!-- <p id="notice"><%= notice %></p> -->
+<div class="showContainer">
+  <p>
+    <strong>Category:</strong>
+    <%= @post.category %>
+    <%= @post.categories.map { |cat| cat.name }.join(",") %>
+  </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @post.category %>
-  <%= @post.categories.map { |cat| cat.name }.join(",") %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+  <p>
+    <strong>Content:</strong>
+    <%= @post.content %>
+  </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+  <p>
+    <strong>Votes:</strong>
+    <%= @post.votes %>
+  </p>
 
-<p>
-  <strong>Votes:</strong>
-  <%= @post.votes %>
-</p>
+  <% unless current_user == @post.user_id  %>
+  <%= form_for @post, :url => {:action => 'vote'}, :method => :put,  :remote => true do |f| %>
+    <%= f.hidden_field :id, value: @post.id %>
+    <%= f.hidden_field :votes, value: @post.votes %>
+    <%= f.submit 'Vote' %>
 
-<% unless current_user == @post.user_id  %>
-<%= form_for @post, :url => {:action => 'vote'}, :method => :put,  :remote => true do |f| %>
-  <%= f.hidden_field :id, value: @post.id %>
-  <%= f.hidden_field :votes, value: @post.votes %>
-  <%= f.submit 'Vote' %>
+  <% end %>
+   <% end %>
 
-<% end %>
- <% end %>
+  <p>
+    <strong>Pics:</strong>
+    <%= @post.pics %>
+  </p>
 
-<p>
-  <strong>Pics:</strong>
-  <%= @post.pics %>
-</p>
+  <p>
+    <strong>Link:</strong>
+    <%= @post.link %>
+  </p>
 
-<p>
-  <strong>Link:</strong>
-  <%= @post.link %>
-</p>
+  <p>
+    <strong>Address:</strong>
+    <%= @post.address %>
+  </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @post.address %>
-</p>
+  <p>
+    <strong>Lat:</strong>
+    <%= @post.lat %>
+  </p>
 
-<p>
-  <strong>Lat:</strong>
-  <%= @post.lat %>
-</p>
+  <p>
+    <strong>Long:</strong>
+    <%= @post.long %>
+  </p>
 
-<p>
-  <strong>Long:</strong>
-  <%= @post.long %>
-</p>
+  <p>
+    <strong>User:</strong>
+    <%= @post.user.username %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user.username %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+  <%= link_to 'Back', posts_path %>
+</div>

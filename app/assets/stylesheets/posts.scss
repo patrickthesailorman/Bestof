@@ -43,3 +43,18 @@ body.postsPage2 {
   background-repeat: no-repeat;
   background-size: 100%;
 }
+.showContainer {
+  color: blue;
+  text-align: center;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 5px;
+  width:25%;
+  background-color: rgba(223, 240, 216, 0.8);
+}
+.showContainer p {
+  max-height: 100px;
+  max-width: 150px;
+  overflow: auto;
+}
