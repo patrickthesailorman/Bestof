@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy, :post_owner]
+    before_action :set_categories, only: [:edit, :new]
   before_action :authenticate_user!,except:[:index]
       before_action :post_owner, only: [:edit, :update, :destroy]
 
@@ -24,15 +25,16 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+
     #@user = current_user
     @post = current_user.posts.build
-    @post = Post.new
-    @categories = Category.all.map{|c| [ c.name, c.id ] }
+    @pics = @post.pics
+
   end
   # GET /posts/1/edit
   def edit
 
-    @categories = Category.all.map{|c| [ c.name, c.id] }
+
     @pics = @post.pics
   end
 
@@ -96,7 +98,9 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.find(params[:id])
     end
-
+    def set_categories
+      @categories = Category.all.map{|c| [ c.name, c.id] }
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :votes, :content, :link, :address, :lat, :long, :user_id, :pics => [], :category_ids => [])
