@@ -31,6 +31,7 @@ class PostsController < ApplicationController
   end
   # GET /posts/1/edit
   def edit
+
     @categories = Category.all.map{|c| [ c.name, c.id] }
   end
 
@@ -63,7 +64,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    @product.category_ids = params[:category_ids]
+    @post.category_ids = params[:category_ids]
 
     respond_to do |format|
       if @post.update(post_params)
