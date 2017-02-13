@@ -30,7 +30,7 @@
 
   <div class="field">
     <%= f.label :pics %>
-    <%= f.text_area :pics %>
+    <%= f.text_area :pics, value: @pics.join(",") %>
   </div>
 
   <div class="field">

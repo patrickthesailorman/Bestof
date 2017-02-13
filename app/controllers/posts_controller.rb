@@ -33,6 +33,7 @@ class PostsController < ApplicationController
   def edit
 
     @categories = Category.all.map{|c| [ c.name, c.id] }
+    @pics = @post.pics
   end
 
   # POST /posts
@@ -66,6 +67,9 @@ class PostsController < ApplicationController
   def update
     @post.category_ids = params[:category_ids]
 
+     pics = params[:post]["pics"]
+     params[:post]["pics"] = pics.split(",")
+     byebug
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -95,6 +99,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :votes, :content, :pics, :link, :address, :lat, :long, :user_id, :category_ids => [])
+      params.require(:post).permit(:title, :votes, :content, :link, :address, :lat, :long, :user_id, :pics => [], :category_ids => [])
     end
 end

@@ -7,6 +7,7 @@ class Post < ApplicationRecord
   validates :content, presence: true
   validates :user_id, presence: true
   acts_as_votable
+  #serialize :pics, Array
   def votes
     self.get_upvotes.size - self.get_downvotes.size
   end
