@@ -7,30 +7,29 @@ body.posts.index {
   background-size: 100%;
   background-color: rgba(255, 255, 255, 0.1);
   background-: transparent;
-  /* height:100%; */
-  /* width: 100%; */
 }
-table tr td {
+
+.container table tr td {
   max-height: 50px;
   max-width: 150px;
-  overflow: auto;
+  overflow-y: scroll;
 }
 h2 {
   color: yellow;
 }
-tr td{
+tr td {
+
+  max-height: 50px;
   color: blue;
 }
 th {
   text-align: center;
   color: #e60d28;
 }
-body.table tr td {
-  max-height: 100px;
-  max-width: 150px;
-  overflow: auto;
-}
-.postsPage > .container-fluid {
+/* .test {
+  max-height: 50px;
+} */
+.container-fluid {
   text-align: center;
   margin-top: 2%;
   margin-left: auto;
