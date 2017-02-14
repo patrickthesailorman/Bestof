@@ -1,4 +1,5 @@
-![Best of Rhode Island](https://github.com/patrickthesailorman/Bestof/app/assets/images/ScreenShot.png)
+![Best of Rhode Island](https://github.com/patrickthesailorman/Bestof/blob/master/app/assets/images/ScreenShot%20.png?raw=true)
+
 # Best of Rhode Island!
 ____
 This is a place for Rhode Island locals to post their favorite places and things in Rhode Island. Users can vote on posts and visitors can see what places and things have the most votes. Find the best beach in Rhode Island, the best Happy hour, the best sushi...you get the idea.
