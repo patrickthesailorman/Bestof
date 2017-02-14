@@ -29,7 +29,7 @@
             <!-- <td><%#= link_to Category.find(post.category_id).name, category_path(post.category_id) %></td> -->
             <td><%= post.title %></td>
             <td><%= post.votes %></td>
-            <td><%= post.content %></td>
+            <td><div class="test"><%= post.content %></div></td>
             <td><%= link_to_pics(post.pics) %></td>
             <td><%= link_to 'website', post.link %></td>
             <td><%= post.address %></td>

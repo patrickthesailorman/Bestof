@@ -71,7 +71,6 @@ class PostsController < ApplicationController
 
      pics = params[:post]["pics"]
      params[:post]["pics"] = pics.split(",")
-     byebug
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }

@@ -9,26 +9,24 @@ body.posts.index {
   background-: transparent;
 }
 
-.container table tr td {
-  max-height: 50px;
-  max-width: 150px;
-  overflow-y: scroll;
-}
 h2 {
   color: yellow;
 }
-tr td {
 
+tr td {
   max-height: 50px;
+  max-width: 150px;
+  overflow: auto;
   color: blue;
 }
+
 th {
   text-align: center;
   color: #e60d28;
 }
-/* .test {
+.test {
   max-height: 50px;
-} */
+}
 .container-fluid {
   text-align: center;
   margin-top: 2%;
