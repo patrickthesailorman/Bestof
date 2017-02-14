@@ -24,9 +24,9 @@ th {
   text-align: center;
   color: #e60d28;
 }
-.test {
+/* .test {
   max-height: 50px;
-}
+} */
 .container-fluid {
   text-align: center;
   margin-top: 2%;
@@ -56,7 +56,8 @@ body.posts.show {
 
 }
 .showContainer p {
-  max-height: 100px;
-  max-width: 150px;
+  text-align: center;
+  max-height: 200px;
+  max-width: 250px;
   overflow: auto;
 }
